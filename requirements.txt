@@ -1,2 +1,2 @@
-gradientai --upgrade
+gradientai
 streamlit
