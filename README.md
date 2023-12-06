@@ -2,7 +2,7 @@
 
 The Interactive Food Drive Assistant app is a streamlit app that uses the Gradient AI platform to generate responses to questions about the Food Drive.
 
-The app uses a base model from Gradient AI, which is a natural language generation model called Nous Hermes2. The app creates a model adapter from the base model and fine-tunes it on a custom dataset of Food Drive instructions and responses. The app then uses the model adapter to complete the user's query and generate a response.
+The app uses a base model from [Gradient AI](https://gradient.ai/), which is a natural language generation model called Nous Hermes2. The app creates a model adapter from the base model and fine-tunes it on a custom dataset of Food Drive instructions and responses. The app then uses the model adapter to complete the user's query and generate a response.
 
 The app requires a Gradient access token and a Gradient workspace ID to connect to the Gradient AI platform. These are secrets that should not be exposed in the app code or the hosted repo. To securely store and use these secrets, the app uses the streamlit secrets management feature.
 
