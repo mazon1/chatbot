@@ -15,11 +15,12 @@ To add the secrets to the app, follow these steps:
 
     # These will be available as environment variables
     GRADIENT_ACCESS_TOKEN = "YOUR_TOKEN"
+  
     GRADIENT_WORKSPACE_ID = "YOUR_WORKSPACE_ID"
 
 - Save the changes and redeploy your app. Your secrets will be securely stored and accessed by your app.
 
-For more information on how to use secrets management in streamlit, you can refer to the [streamlit docs] or the [streamlit blog].
+For more information on how to use secrets management in streamlit, you can refer to the [streamlit docs](https://blog.streamlit.io/content/images/2021/08/gif-1-4.gif#browser) or the [streamlit blog](https://blog.streamlit.io/secrets-in-sharing-apps/).
 
 
 [Link to App](https://chatbot-c9tfhdbmxtzoyx4fu9ferg.streamlit.app/)
