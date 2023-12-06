@@ -1,19 +1,20 @@
-# Import necessary libraries
-
 import streamlit as st
 from gradientai import Gradient
-st.write("GRADIENT_ACCESS_TOKEN:", st.secrets["GRADIENT_ACCESS_TOKEN"])
-st.write("GRADIENT_WORKSPACE_ID:", st.secrets["GRADIENT_WORKSPACE_ID"])
-import os
-os.environ['GRADIENT_ACCESS_TOKEN'] = GRADIENT_ACCESS_TOKEN
-os.environ['GRADIENT_WORKSPACE_ID'] = GRADIENT_WORKSPACE_ID
+
+# Fetch API keys from Streamlit Secrets
+gradient_access_token = st.secrets["gradient"]["access_token"]
+gradient_workspace_id = st.secrets["gradient"]["workspace_id"]
+
+if gradient_access_token is None or gradient_workspace_id is None:
+    st.error("API key or workspace ID not found. Please set the secrets in the Streamlit Sharing dashboard.")
+    st.stop()
 
 def main():
     # Streamlit title and description
     st.title("Interactive Food Drive Assistant")
     st.write("Ask a question about the Food Drive!")
 
-    with Gradient() as gradient:
+    with Gradient(api_key=gradient_access_token, workspace_id=gradient_workspace_id) as gradient:
         base_model = gradient.get_base_model(base_model_slug="nous-hermes2")
         new_model_adapter = base_model.create_model_adapter(name="interactive_food_drive_model")
 
